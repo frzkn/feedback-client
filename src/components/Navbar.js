@@ -1,10 +1,11 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import { services } from '../services/auth'
 const Navbar = () => {
   return (
     <>
       <ul className="flex p-4 shadow mb-8">
-        <h1 className="flex font-bold items-center">
+        <h1 className="flex font-bold items-center mr-auto">
           <svg
             fill="none"
             stroke="currentColor"
@@ -18,8 +19,8 @@ const Navbar = () => {
           </svg>
           <span>Feedback Portal</span>
         </h1>
-        <li className=" ml-auto mr-2 md:mr-6">
-          <NavLink className="text-teal-500 hover:text-teal-800" exact to="/">
+        <li className="  mr-2 md:mr-6">
+          <NavLink className="text-teal-500 hover:text-teal-800" exact to="/" activeClassName="text-teal-800">
             <svg
               fill="none"
               stroke="currentColor"
@@ -33,9 +34,8 @@ const Navbar = () => {
             </svg>
           </NavLink>
         </li>
-
         <li className="  mr-2 md:mr-6">
-          <NavLink className="text-teal-500 hover:text-teal-800" exact to="/newpost">
+          <NavLink className="text-teal-500 hover:text-teal-800" exact to="/newpost" activeClassName="text-teal-800">
             <svg
               fill="none"
               stroke="currentColor"
@@ -50,7 +50,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li className="  mr-2 md:mr-6">
-          <NavLink className="text-teal-500 hover:text-teal-800" exact to="/login">
+          <NavLink className="text-teal-500 hover:text-teal-800" exact to="/login" activeClassName="text-teal-800">
             <svg
               fill="none"
               stroke="currentColor"

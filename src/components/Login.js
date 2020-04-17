@@ -49,7 +49,7 @@ const Login = () => {
             <input
               type="text"
               className="form-input mt-1 block w-full"
-              placeholder="faraz@example.com"
+              placeholder="frzkn"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -60,7 +60,7 @@ const Login = () => {
             <input
               type="password"
               className="form-input mt-1 block w-full"
-              placeholder="*********"
+              placeholder="*****"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />

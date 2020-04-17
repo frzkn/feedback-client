@@ -68,6 +68,13 @@ export const UPDATE_SELECTED = 'UPDATE_SELECTED'
 export const SUB_COMMENT_SUCCESS = 'SUB_COMMENT_SUCCESS'
 export const COMMENT_SUCCESS = 'COMMENT_SUCCESS'
 export const POST_SUCCESS = 'POST_SUCCESS'
+export const CLEAR_SELECTED = 'CLEAR_SELECTED'
+
+export const clearSelected = () => {
+  return {
+    type: CLEAR_SELECTED,
+  }
+}
 
 export const updateSelected = (data) => {
   return {

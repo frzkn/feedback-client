@@ -7,6 +7,7 @@ import {
   COMMENT_SUCCESS,
   SUB_COMMENT_SUCCESS,
   LOGOUT,
+  CLEAR_SELECTED,
 } from '../actions'
 
 const postReducer = (state = { data: [], loading: false, selected: {} }, action) => {
@@ -36,6 +37,8 @@ const postReducer = (state = { data: [], loading: false, selected: {} }, action)
       )
       return { ...state, selected: { ...state.selected, comments: newComments } }
     case LOGOUT:
+      return { data: [], loading: false, selected: {} }
+    case CLEAR_SELECTED:
       return { data: [], loading: false, selected: {} }
     default:
       return state

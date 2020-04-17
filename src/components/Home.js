@@ -4,6 +4,18 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom'
 import { services } from '../services/auth'
 
+const Loader = () => {
+  return (
+    <div className="md:col-span-2 flex justify-center items-center ">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  )
+}
 const Home = () => {
   const posts = useSelector((state) => state.postReducer)
   const history = useHistory()
@@ -53,7 +65,8 @@ const Home = () => {
             </div>
           ))
         ) : (
-          <h1 className=" block md:col-span-2 text-center p-16 text-1xl">No feedbacks to show</h1>
+          <Loader />
+          // <h1 className=" block md:col-span-2 text-center p-16 text-1xl">No feedbacks to show</h1>
         )}
       </div>
     </div>
