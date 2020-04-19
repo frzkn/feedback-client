@@ -4,6 +4,7 @@ import { services } from '../services/auth'
 // Auth reducer actions
 export const AUTH_FAILED = 'AUTH_FAILED'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+export const LOGIN_TRUE = 'LOGIN_TRUE'
 export const USER_LOGGED_IN = 'USER_LOGGED_IN'
 export const AUTH_LOADING = 'AUTH_LOADING'
 export const LOGOUT = 'LOGOUT'
@@ -24,6 +25,12 @@ export const logout = () => {
   }
 }
 
+export const loginStateTrue = () => {
+  return {
+    type: LOGIN_TRUE,
+  }
+}
+
 export const loginUser = (user) => {
   return (dispatch) => {
     axios
@@ -33,6 +40,7 @@ export const loginUser = (user) => {
         if (data.success) {
           services.setToken(data.token, user.username)
           dispatch({ type: 'LOGIN_SUCCESS', payload: user })
+          dispatch({ type: LOGIN_TRUE })
         }
       })
       .catch((err) => {

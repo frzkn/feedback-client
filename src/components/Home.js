@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect } from 'react'
-import { fetchPosts, updateSelected } from '../actions'
+import { fetchPosts, updateSelected, loginUser, loginStateTrue } from '../actions'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom'
 import { services } from '../services/auth'
@@ -21,13 +21,14 @@ const Home = () => {
   const history = useHistory()
 
   const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchPosts())
-  }, [])
+  useEffect(() => {}, [])
 
   useLayoutEffect(() => {
     if (!services.loggedIn()) {
       history.push('/login')
+    } else {
+      dispatch(loginStateTrue())
+      dispatch(fetchPosts())
     }
   }, [])
 
