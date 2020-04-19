@@ -2,7 +2,7 @@
   "name": "feedback-system",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://localhost:3001",
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -25,8 +25,7 @@
     "eject": "react-scripts eject",
     "build:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
-    "server": "cd server && nodemon yarn start"
-
+    "deploy": "rm -rf build/ && yarn build && cp _redirects build/ && netlify deploy --prod"
   },
   "eslintConfig": {
     "extends": "react-app"

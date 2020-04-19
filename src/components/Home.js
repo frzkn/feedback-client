@@ -18,6 +18,7 @@ const Loader = () => {
 }
 const Home = () => {
   const posts = useSelector((state) => state.postReducer)
+  const auth = useSelector((state) => state.authReducer)
   const history = useHistory()
 
   const dispatch = useDispatch()
@@ -68,9 +69,10 @@ const Home = () => {
                 </Link>
               </div>
             ))
+        ) : auth.fetchSuccess ? (
+          <h1 className=" block md:col-span-2 text-center p-16 text-1xl">No feedbacks to show</h1>
         ) : (
           <Loader />
-          // <h1 className=" block md:col-span-2 text-center p-16 text-1xl">No feedbacks to show</h1>
         )}
       </div>
     </div>

@@ -10,10 +10,10 @@ import {
   CLEAR_SELECTED,
 } from '../actions'
 
-const postReducer = (state = { data: [], loading: false, selected: {} }, action) => {
+const postReducer = (state = { data: [], loading: false, selected: {}, fetchSuccess: false }, action) => {
   switch (action.type) {
     case FETCH_SUCCESS:
-      let newState1 = { ...state, loading: false, data: [...action.payload] }
+      let newState1 = { ...state, loading: false, fetchSuccess: true, data: [...action.payload] }
       return newState1
     case FETCH_FAILED:
       return state
