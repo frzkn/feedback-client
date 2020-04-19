@@ -15,18 +15,18 @@ const Login = () => {
     e.preventDefault()
     if (username.trim() && password.trim()) {
       dispatch(loginUser({ username, password }))
-      setTimeout(() => {
-        history.push('/')
-      }, 1000)
+      // setTimeout(() => {
+      //   history.push('/')
+      // }, 1000)
     } else alert('Validation Error')
   }
 
   const user = services.getUser()
-  // useEffect(() => {
-  //     if (state.isLoggedIn) {
-  //       history.push('/')
-  //     }
-  //   }, [user])
+  useEffect(() => {
+    if (state.isLoggedIn) {
+      history.push('/')
+    }
+  }, [user])
 
   useEffect(() => {
     if (user && services.loggedIn()) {

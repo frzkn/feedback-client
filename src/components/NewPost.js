@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { services } from '../services/auth'
 import { postPost } from '../actions'
@@ -10,7 +10,7 @@ const NewPost = () => {
   const dispatch = useDispatch()
   const history = useHistory()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!services.loggedIn()) {
       history.push('/')
     }

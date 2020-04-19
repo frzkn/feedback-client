@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useLayoutEffect } from 'react'
 import { fetchPosts, updateSelected } from '../actions'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom'
@@ -25,7 +25,7 @@ const Home = () => {
     dispatch(fetchPosts())
   }, [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!services.loggedIn()) {
       history.push('/login')
     }
