@@ -39,13 +39,13 @@
 }
 @keyframes blink {
   0% {
-    opacity: 70%;
+    opacity: 0.7;
   }
   50% {
-    opacity: 100%;
+    opacity: 1;
   }
   100% {
-    opacity: 70%;
+    opacity: 0.7;
   }
 }
 .lds-ring {
