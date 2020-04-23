@@ -26,7 +26,8 @@
     "eject": "react-scripts eject",
     "build:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
-    "deploy": "rm -rf build/ && yarn build && cp _redirects build/ && netlify deploy --prod"
+    "deploy": "rm -rf build/ && yarn build && cp _redirects build/",
+    "deploy:netlify": "yarn deploy && netlify deploy --prod"
   },
   "eslintConfig": {
     "extends": "react-app"
