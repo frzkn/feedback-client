@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { postSubComment } from '../actions/'
 import { useDispatch } from 'react-redux'
 import { services } from '../services/auth'
-const Comment = ({ comment, classes, reply }) => {
+const Comment = ({ comment, classes, reply, children }) => {
   const [replySwitch, setReplySwitch] = useState(false)
   const [content, setContent] = useState('')
   console.log(comment)
@@ -26,7 +26,7 @@ const Comment = ({ comment, classes, reply }) => {
     } else alert('Please enter a reply')
   }
 
-  return (
+  return [
     <li className={`border-b p-4 ${classes} ${!reply ? 'bg-gray-200' : 'bg-gray-100'}`}>
       <p className="font-semibold">{comment.username}</p>
 
@@ -89,7 +89,8 @@ const Comment = ({ comment, classes, reply }) => {
           ),
         ]}
       </div>
-    </li>
-  )
+    </li>,
+    [children],
+  ]
 }
 export default Comment

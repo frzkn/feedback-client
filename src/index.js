@@ -9,8 +9,8 @@ import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-const store = createStore(rootReducer, applyMiddleware(thunk, logger), devTools)
+// const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const store = createStore(rootReducer, applyMiddleware(thunk, logger))
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

@@ -42,10 +42,11 @@ const Comments = ({ comments, id }) => {
           comments.map((comment) => {
             return (
               <div>
-                <Comment comment={comment} classes="border mt-2" reply={true} />
-                {comment.subcomments.map((subcom) => (
-                  <Comment comment={subcom} classes="ml-4 border-l" reply={false} />
-                ))}
+                <Comment comment={comment} classes="border mt-2" reply={true}>
+                  {comment.subcomments.map((subcom) => (
+                    <Comment comment={subcom} classes="ml-4 border-l" reply={false} />
+                  ))}
+                </Comment>
               </div>
             )
           })}
@@ -53,17 +54,5 @@ const Comments = ({ comments, id }) => {
     </div>
   )
 }
-export default Comments
 
-// {
-//   /* <li>
-//           <Comment classes="border mt-2" reply={true} />
-//           <Comment classes="ml-4 border-l" reply={false} />
-//           <Comment classes="ml-4 border-l" reply={false} />
-//         </li>
-//         <li>
-//           <Comment classes="border mt-2" reply={true} />
-//           <Comment classes="ml-4 border-l" reply={false} />
-//           <Comment classes="ml-4 border-l" reply={false} />
-//         </li> */
-// }
+export default Comments
