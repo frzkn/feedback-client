@@ -17,5 +17,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 #### Instructions for viewing deployed version
 
-Open [Feedback Portal](https://feedbackportal.netlify.com)
+Open [React file manager](https://react-file-manager-task.netlify.app/)
 to view it in the browser.
